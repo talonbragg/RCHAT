@@ -1,7 +1,23 @@
 {
-  "name": "chat",
+  "name": "rocketchat101",
   "version": "0.0.1",
-  "description": "A messaging app with socket.io",
+  "private": "true",
+  "description": "A simple way to chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo No Test Yet",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talonbragg/chat.git"
+  },
+  "author": "Talon Bragg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/talonbragg/chat/issues"
+  },
+  "homepage": "https://github.com/KingPixil/snip#readme",
   "dependencies": {
     "socket.io": "^1.7.2",
     "express": "^4.14.1"
