@@ -27,8 +27,8 @@
       var nick = prompt('What would you like your nick name to be?');
       var socket = io();
       $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('') + nick;
+        socket.emit('chat message', $('#m').val(), nick);
+        $('#m').val('');
         return false;
       });
       socket.on('chat message', function(msg){
