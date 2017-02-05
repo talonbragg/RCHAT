@@ -17,9 +17,9 @@
   "bugs": {
     "url": "https://github.com/talonbragg/chat/issues"
   },
-  "homepage": "https://github.com/KingPixil/snip#readme",
+  "homepage": "https://github.com/talonbragg/chat",
   "dependencies": {
-    "socket.io": "^1.7.2",
-    "express": "^4.14.1"
+    "socket.io": "*",
+    "express": "*"
   }
 }
