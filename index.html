@@ -28,7 +28,7 @@
       var date = new Date();
       var socket = io();
       $('form').submit(function(){
-        socket.emit('chat message', $('#m').val() + ' ' + ' ' + ' ' + ' ' + '*User:' + nick + ' ' + ' ' + '|' + ' ' + ' ' +  date);
+        socket.emit('chat message', $('#m').val() + ' ' + ' ' + ' ' + ' ' + '<em>*User:</em>' + nick + ' ' + ' ' + '|' + ' ' + ' ' +  date);
         $('#m').val('');
         return false;
       });
