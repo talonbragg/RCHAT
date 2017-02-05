@@ -13,18 +13,25 @@
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
+      #btn {top:0%;right:0%;position:fixed;}
+      #btn2 {top:0%;right:10%;position:fixed;}
     </style>
   </head>
   <body>
     <h1>🚀 Rocket Chat</h1>
+    <button id="btn">Hide type bar</button>
+    <button id="btn2">Show type bar</button>
     <ul id="messages"></ul>
-    <form action="">
+    <form action="" id="textbar">
       <input id="m" autocomplete="off" placeholder="yourname: [Message]"/><button>Send</button>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script>
     <script>
       var nick = prompt('What would you like your nick name to be?');
+      var btn = document.getElementById('btn');
+      var btn2 = document.getElementById('btn2');
+      var textbar = document.getElementById('textbar');
       var date = new Date();
       var socket = io();
       $('form').submit(function(){
@@ -34,6 +41,12 @@
       });
       socket.on('chat message', function(msg){
         $('#messages').append($('<li>').text(msg));
+      });
+      btn.addEventlistener('click', function(){
+        textbar.style.display = "none";
+      });
+      btn2.addEventListener('click', function(){
+        textbar.style.display = "block";
       });
     </script>
   </body>
