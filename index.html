@@ -39,6 +39,10 @@
         $('#m').val('');
         return false;
       });
+      socket.on('connection', function(){
+        socket.emit('chat message', 'A user has joined');
+        return false;
+      });
       socket.on('chat message', function(msg){
         $('#messages').append($('<li>').text(msg));
       });
