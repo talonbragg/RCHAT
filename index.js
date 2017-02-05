@@ -10,9 +10,11 @@ io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
   });
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
+  socket.on('connection', function(msg){
+    io.emit('A user connected', msg)
+  });
+  socket.on('disconnect', function(msg){
+    io.emit('user disconnected', msg);
   });
 });
 
