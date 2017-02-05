@@ -28,7 +28,7 @@
       var socket = io();
       $('form').submit(function(){
         socket.emit('chat message', $('#m').val() + nick);
-        $('#m').val('') + '             ' + nick;
+        $('#m').val('') + '*' + nick;
         return false;
       });
       socket.on('chat message', function(msg){
