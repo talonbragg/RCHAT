@@ -25,9 +25,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script>
     <script>
       var nick = prompt('What would you like your nick name to be?');
+      var date = new Date();
       var socket = io();
       $('form').submit(function(){
-        socket.emit('chat message', $('#m').val() + ' ' + '*' + nick);
+        socket.emit('chat message', $('#m').val() + ' ' + '*User:' + nick + ' ' + ' ' + date);
         $('#m').val('');
         return false;
       });
