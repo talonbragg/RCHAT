@@ -60,6 +60,11 @@
       } else {
       window.webkitNotifications.requestPermission(function(){});
       }
+      var myNotification = window.webkitNotifications.createNotification('mike.png', 'New Content Available', 'Click to view');
+      myNotification.onclick = function() {
+      window.location = 'http://teamtreehouse.com/new/content';
+      }
+      myNotification.show();
     </script>
   </body>
 </html>
