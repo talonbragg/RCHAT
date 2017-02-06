@@ -55,6 +55,11 @@
       btn2.addEventListener('click', function(){
         textbar.style.display = "block";
       });
+      if (window.webkitNotifications.checkPermission() == 0) {
+      // Good to go, you can create a notification.
+      } else {
+      window.webkitNotifications.requestPermission(function(){});
+      }
     </script>
   </body>
 </html>
