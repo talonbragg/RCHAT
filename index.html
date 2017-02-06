@@ -55,16 +55,15 @@
       btn2.addEventListener('click', function(){
         textbar.style.display = "block";
       });
-      if (window.webkitNotifications.checkPermission() == 0) {
-      // Good to go, you can create a notification.
-      } else {
-      window.webkitNotifications.requestPermission(function(){});
+      if (nick.length > 30){
+      nick = 'Anonymous';
       }
-      var myNotification = window.webkitNotifications.createNotification('mike.png', 'New Content Available', 'Click to view');
-      myNotification.onclick = function() {
-      window.location = 'http://teamtreehouse.com/new/content';
+      else if (nick.length === 0){
+      nick = 'Anonymous'
       }
-      myNotification.show();
+      else if (nick === null) {
+      nick = 'Anonymous';
+      }
     </script>
   </body>
 </html>
